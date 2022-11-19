@@ -1,5 +1,5 @@
 :root {
-	--background-color: #e5e5e5;
+	--background-color: #ffffff;
 	--primary-text-color: #434455;
 	--secondary-text-color: #2e2f42;
 	--secondary-background-color: #f4f4fd;
@@ -20,12 +20,28 @@ body {
 a {
 	text-decoration: none;
 }
+ul {
+	padding-left: 0;
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 0 36px;
+	outline: solid 2px tomato;
+}
+
 .heading {
 	font-weight: 600;
 }
-
+/* header */
+.main-nav {
+	display: flex;
+	align-items: center;
+}
 /* logo */
 .logo {
+	margin-right: 70px;
 	color: var(--secondary-text-color);
 	font-family: "Raleway", sans-serif;
 	font-weight: 800;
@@ -42,8 +58,20 @@ a {
 	color: var(--secondary-background-color);
 }
 /* navigation */
+.site-nav > .list {
+	display: flex;
+	margin-left: auto;
+}
+.site-nav .item:not(:last-child) {
+	margin-right: 40px;
+}
 .site-nav .link {
+	display: block;
+	padding-top: 24px;
+	padding-bottom: 24px;
+
 	color: var(--secondary-text-color);
+
 	font-weight: 600;
 	line-height: 1.5;
 	cursor: pointer;
@@ -59,6 +87,13 @@ a {
 	list-style: none;
 }
 /* contacts */
+.list.contacts {
+	display: flex;
+	margin-left: auto;
+}
+.contacts > .item:not(:last-child) {
+	margin-right: 40px;
+}
 .contacts {
 	color: var(--primary-text-color);
 	line-height: 1.5;
