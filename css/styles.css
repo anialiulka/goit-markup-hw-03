@@ -20,10 +20,16 @@ body {
 a {
 	text-decoration: none;
 }
+p {
+	margin: 0;
+}
 ul {
 	padding-left: 0;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+li {
+	list-style: none;
 }
 h1,
 h2,
@@ -31,14 +37,18 @@ h3,
 h4 {
 	margin: 0;
 }
+img {
+	display: block;
+	max-width: 100%;
+}
+
 .container {
-	width: 1200px;
+	width: 1128px;
 	margin: 0 auto;
-	/* outline: solid 2px tomato; */
 }
 .section {
-	padding-top: 94px;
-	padding-bottom: 94px;
+	padding-top: 120px;
+	padding-bottom: 120px;
 }
 
 .heading {
@@ -46,14 +56,16 @@ h4 {
 }
 
 /* header */
+.page-header {
+	border-bottom: solid 1px var(--secondary-text-color);
+}
 .main-nav {
 	display: flex;
 	align-items: center;
 }
 /* logo */
 .logo {
-	margin-right: 70px;
-	margin-left: 156px;
+	margin-right: 77px;
 	color: var(--secondary-text-color);
 	font-family: "Raleway", sans-serif;
 	font-weight: 800;
@@ -70,11 +82,13 @@ h4 {
 	color: var(--secondary-background-color);
 }
 /* navigation */
+
 .site-nav > .list {
 	display: flex;
 	margin-left: auto;
 }
-.site-nav .item:not(:last-child) {
+.site-nav .item:not(:last-child),
+.contacts > .item:not(:last-child) {
 	margin-right: 40px;
 }
 .site-nav .link {
@@ -95,16 +109,10 @@ h4 {
 .site-nav .link:active {
 	color: var(--logo-hover-color);
 }
-.list {
-	list-style: none;
-}
 /* contacts */
 .list.contacts {
 	display: flex;
 	margin-left: auto;
-}
-.contacts > .item:not(:last-child) {
-	margin-right: 40px;
 }
 .contacts {
 	color: var(--primary-text-color);
@@ -160,10 +168,11 @@ h4 {
 }
 .values .list {
 	display: flex;
-	margin-left: 156px;
-	margin-right: 156px;
 }
-.values .item:not(:last-child) {
+.values .item:not(:last-child),
+.team .item:not(:last-child),
+.work .item:not(:last-child),
+.filter .item:not(:last-child) {
 	margin-right: 24px;
 }
 .visually-hidden {
@@ -179,6 +188,7 @@ h4 {
 /* work */
 .work {
 	text-align: center;
+	padding-top: 0;
 }
 .work .heading {
 	margin-bottom: 72px;
@@ -192,24 +202,27 @@ h4 {
 	justify-content: center;
 	margin-top: auto;
 }
-.work .item:not(:last-child) {
-	margin-right: 24px;
-}
+
 /* our team */
-.team {
+.team-background {
 	background-color: var(--secondary-background-color);
+}
+.team.section {
 	text-align: center;
-	padding-top: 120px;
-	padding-bottom: 120px;
+}
+.photo {
+	margin-bottom: 32px;
 }
 .team .heading {
-	color: var(--secondary-text-color);
-	color: var(--secondary-text-color);
 	margin-bottom: 72px;
+	color: var(--secondary-text-color);
+	color: var(--secondary-text-color);
 	font-size: 36px;
 	line-height: 1.1;
 }
-.team .name {
+.team .name,
+.projects .heading {
+	margin-bottom: 8px;
 	color: var(--secondary-text-color);
 	font-size: 20px;
 	line-height: 1.2;
@@ -218,22 +231,32 @@ h4 {
 	display: flex;
 	justify-content: center;
 }
-.team .item:not(:last-child) {
-	margin-right: 24px;
+
+.team .position {
+	margin-bottom: 32px;
+	line-height: 1.5;
 }
 /* footer */
-.container.footer {
+.footer {
 	background-color: var(--secondary-text-color);
+}
+.container.footer {
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
 .footer-text {
+	max-width: 264px;
 	color: var(--button-background-color);
 	line-height: 1.5;
-	padding-left: 156px;
 }
 /* portfolio  */
+.portfolio.section {
+	padding-top: 92px;
+}
 .portfolio-btn {
+	padding: 12px 24px;
+	border: none;
+	border-radius: 4%;
 	background-color: var(--button-background-color);
 	color: var(--logo-hover-color);
 	font-family: inherit;
@@ -242,20 +265,33 @@ h4 {
 	line-height: 1.5;
 	cursor: pointer;
 }
+
 .portfolio-btn:hover,
 .portfolio-btn:focus {
 	background-color: #4d5ae5;
 	color: var(--alternative-text-color);
 }
 /* projects */
-.projects .heading {
-	color: var(--secondary-text-color);
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 1.2;
+.list.projects {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 0;
+	gap: 24px;
 }
+.projects > .item {
+	flex-basis: calc((100% - 48px) / 3);
+}
+
 .projects .project-category {
-	color: var(--primary-text-color);
-	font-weight: 400;
 	line-height: 1.5;
+}
+.filter {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 72px;
+}
+.content-information {
+	margin-left: 16px;
+	margin-bottom: 32px;
 }
